@@ -1,0 +1,16 @@
+How to start
+start.prod
+
+How to connect to container
+docker exec -it php72.clean.public bash -l
+
+How to stop
+stop.prod
+
+
+login: admin
+pass:  admin
+
+#run console command php bin/console evrinoma:calc --formula="10%3"
+#use restApi Autorize on the page http://php72.clean.public/ and go to the RestApi/Default page
+

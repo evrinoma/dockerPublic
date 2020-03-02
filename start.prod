@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker-compose -f docker-compose.clean.yml up -d --remove-orphans
+echo $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' php72.clean.public) php72.clean.public >> /etc/hosts
+

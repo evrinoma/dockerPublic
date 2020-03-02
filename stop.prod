@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker-compose -f docker-compose.clean.yml down
+sed -i -e "/php72\.clean\.public/d" /etc/hosts
+
+for variable in `docker images | grep 'evrinoma/php72.clean.public\|evrinoma/db.maria.public' | awk '{print $3}'`
+do
+    if [ ! -z "$variable" ]; then
+            docker rmi "$variable"
+    fi
+done
+
