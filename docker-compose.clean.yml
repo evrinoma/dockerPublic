@@ -2,7 +2,7 @@ version: '3'
 services:
     maria_db:
         container_name: "maria.db.public"
-        image: "evrinoma/db.maria.public"
+        image: "evrinoma/db.maria"
         hostname: "maria.db.public"
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
@@ -11,7 +11,7 @@ services:
 
     php80_clean:
         container_name: "php80.clean.public"
-        image: "evrinoma/php80.clean.public"
+        image: "evrinoma/php80"
         hostname: "php80.clean.public"
         environment:
             - ENGINE=nginx
@@ -24,7 +24,7 @@ services:
             - web_dir=/opt/WWW/container.ite-ng.ru/projects/nginx/clean/public
             - web_server=php80.clean.public
             - web_alias=clean
-            - console=cd /opt/WWW/container.ite-ng.ru/projects/nginx/clean && composer install && npm install && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console c:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console a:i --symlink && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:d:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:s:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json && webpack --env=prod && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:user:create root root@root 1234 --super-admin && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/vendor/phpunit/phpunit/phpunit --bootstrap /opt/WWW/container.ite-ng.ru/projects/nginx/clean/tests/bootstrap.php --configuration phpunit.xml.dist tests/Functional/Controller/ > /tmp/unit.txt
+            - console=cd /opt/WWW/container.ite-ng.ru/projects/nginx/clean && sed -i -e 's/172.18.2.1/maria.db.public/' .env && composer install && npm install && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console c:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console a:i --symlink && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:d:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:s:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json && webpack --env=prod && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:user:create root root@root 1234 --super-admin && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/vendor/phpunit/phpunit/phpunit --bootstrap /opt/WWW/container.ite-ng.ru/projects/nginx/clean/tests/bootstrap.php --configuration phpunit.xml.dist tests/Functional/Controller/ > /tmp/unit.txt
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
         networks:

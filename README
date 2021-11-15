@@ -16,5 +16,10 @@ pass:  1234
 
 
 #RestApi
-use restApi Autorize on the page http://php80.clean.public/ and go to the RestApi/Default page
+use restApi Autorize on the page http://php80.clean.public/ 
+after autorize please visit link to create default menu
+http://php80.clean.public/evrinoma/api/menu/create
+
+and go to the RestApi/Default page
+
 
