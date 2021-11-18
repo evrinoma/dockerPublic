@@ -2,5 +2,5 @@
 
 docker-compose -f docker-compose.clean.yml up -d --remove-orphans
 sleep 15 && docker exec -it maria.db.public  create.user
-echo $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' php80.clean.public) php80.clean.public >> /etc/hosts
+echo $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' php74.clean.public) php74.clean.public >> /etc/hosts
 

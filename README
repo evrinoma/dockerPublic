@@ -1,25 +1,19 @@
 #How to start
 start.prod
 
-and wait a few minutes till the deploy complete and go to the http://php80.clean.public/
+and wait a few minutes till the deploy complete and go to the http://php74.clean.public/
 
 #How to connect to container
-docker exec -it php80.clean.public bash -l
-
-#How to stop
-stop.prod
+docker exec -it php74.clean.public bash -l
 
 login: root
 pass:  1234
 
 #run console command 
+cd /opt/WWW/container.ite-ng.ru/projects/nginx/limangorec && php bin/console purchase-cigarettes 2 12.61
 
+#run test
+/usr/bin/php vendor/phpunit/phpunit/phpunit --bootstrap /opt/WWW/container.ite-ng.ru/projects/nginx/limangorec/src/Tests/bootstrap.php --configuration phpunit.xml.dist /opt/WWW/container.ite-ng.ru/projects/nginx/limangorec/src/Tests/Command/
 
-#RestApi
-use restApi Autorize on the page http://php80.clean.public/ 
-after autorize please visit link to create default menu
-http://php80.clean.public/evrinoma/api/menu/create
-
-and go to the RestApi/Default page
-
-
+#How to stop
+stop.prod
