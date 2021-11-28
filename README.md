@@ -40,6 +40,10 @@ stop.prod
 login: root
 pass:  1234
 
+#Test results
+
+docker exec -it php80.clean.public cat /tmp/tests.txt
+
 #Console command 
 
 php bin/console app:e:p --handler=dummy --description=fixer
