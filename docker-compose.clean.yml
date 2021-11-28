@@ -4,6 +4,8 @@ services:
         container_name: "maria.db.public"
         image: "evrinoma/db.maria"
         hostname: "maria.db.public"
+        environment:
+            - console=create.root && create.user 1234 test test
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
         networks:
