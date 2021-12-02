@@ -4,6 +4,8 @@ services:
         container_name: "maria.db.public"
         image: "evrinoma/db.maria"
         hostname: "maria.db.public"
+        environment:
+            - console=create.root && create.user 1234 test test
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
         networks:
@@ -24,7 +26,7 @@ services:
             - web_dir=/opt/WWW/container.ite-ng.ru/projects/nginx/clean/public
             - web_server=php80.clean.public
             - web_alias=clean
-            - console=cd /opt/WWW/container.ite-ng.ru/projects/nginx/clean && sed -i -e 's/172.18.2.1/maria.db.public/' .env && composer install && npm install && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console c:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console a:i --symlink && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:d:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console d:s:c && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json && webpack --env=prod && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/bin/console fos:user:create root root@root 1234 --super-admin && php /opt/WWW/container.ite-ng.ru/projects/nginx/clean/vendor/phpunit/phpunit/phpunit --bootstrap /opt/WWW/container.ite-ng.ru/projects/nginx/clean/tests/bootstrap.php --configuration phpunit.xml.dist tests/Functional/Controller/ > /tmp/unit.txt
+            - console=cd /opt/WWW/container.ite-ng.ru/projects/nginx/clean && git checkout SarioMarketingGmbh && sed -i -e 's/172.18.2.1/maria.db.public/' .env && sed -i -e 's/172.18.2.1/maria.db.public/' .env.test && composer install && npm install && php bin/console c:c && php bin/console a:i --symlink && php bin/console d:d:c && php bin/console d:s:c && php bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json && webpack --env=prod && php bin/console fos:user:create root root@root 1234 --super-admin && php bin/console fos:user:create user user@user 1234 &&  php bin/console fos:user:create manager manager@manager 1234 && php bin/console fos:user:create dev deve@dev 1234 && php bin/console evrinoma:menu:create && php vendor/phpunit/phpunit/phpunit --bootstrap tests/bootstrap.php --configuration phpunit.xml.dist tests/Functional/Controller/ >> /tmp/tests.txt  && cd /opt/WWW/container.ite-ng.ru/projects/nginx/clean/vendor/evrinoma/vacation-bundle && sed -i -e 's/172.18.2.1/maria.db.public/' .env.test && composer config -g github-oauth.github.com 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 && composer install --dev && php vendor/phpunit/phpunit/phpunit --bootstrap src/Tests/bootstrap.php --configuration phpunit.xml.dist src/Tests >> /tmp/tests.txt
         volumes:
             - "/etc/localtime:/etc/localtime:ro"
         networks:
