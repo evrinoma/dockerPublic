@@ -62,7 +62,6 @@ use restApi Autorize on the page http://php80.clean.public/
         composer install --dev
         php vendor/phpunit/phpunit/phpunit --bootstrap src/Tests/bootstrap.php --configuration phpunit.xml.dist src/Tests >> /tmp/tests.txt
 
-
 # Source code
 
 **Application**
@@ -78,3 +77,11 @@ https://github.com/evrinoma/VacationBundle branch master
 **AutoDeployer**
 
 https://github.com/evrinoma/dockerPublic
+
+# Step by Step
+
+![Login](docs/img/login.png?raw=true "Login Page")
+
+![apidoc](docs/img/apidoc.png?raw=true "ApiDoc Page")
+
+![vacation text](docs/img/vacation.png?raw=true "Vacation Api")
