@@ -80,8 +80,8 @@ https://github.com/evrinoma/dockerPublic
 
 # Step by Step
 
-![Login](docs/img/login.png?raw=true "Login Page")
+![Login](doc/img/login.png?raw=true "Login Page")
 
-![apidoc](docs/img/apidoc.png?raw=true "ApiDoc Page")
+![apidoc](doc/img/apidoc.png?raw=true "ApiDoc Page")
 
-![vacation text](docs/img/vacation.png?raw=true "Vacation Api")
+![vacation text](doc/img/vacation.png?raw=true "Vacation Api")
