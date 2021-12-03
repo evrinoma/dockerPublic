@@ -16,7 +16,7 @@ docker exec -it php80.clean.public bash -l
 
 stop.prod
 
-#Creditinal
+# Creditinal
 
 login: root
 pass: 1234
@@ -27,10 +27,9 @@ docker exec -it php80.clean.public cat /tmp/tests.txt
 
 # Console command
 
-
 # RestApi
 
-use restApi Autorize on the page http://php80.clean.public/
+Autorize and use restApi on the page http://php80.clean.public/
 
 # How to install manual
 
