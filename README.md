@@ -1,4 +1,6 @@
-# Task Escaped
+# Task
+
+![Login](docs/img/task.png?raw=true "Escaped")
 
 # How to start
 
@@ -80,8 +82,8 @@ https://github.com/evrinoma/dockerPublic
 
 # Step by Step
 
-![Login](doc/img/login.png?raw=true "Login Page")
+![Login](docs/img/login.png?raw=true "Login Page")
 
-![apidoc](doc/img/apidoc.png?raw=true "ApiDoc Page")
+![apidoc](docs/img/apidoc.png?raw=true "ApiDoc Page")
 
-![vacation text](doc/img/vacation.png?raw=true "Vacation Api")
+![vacation text](docs/img/vacation.png?raw=true "Vacation Api")
