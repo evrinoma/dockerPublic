@@ -77,7 +77,7 @@ https://github.com/evrinoma/VacationBundle branch master
 
 **AutoDeployer**
 
-https://github.com/evrinoma/dockerPublic
+https://github.com/evrinoma/dockerPublic branch SarioMarketingGmbh
 
 # Step by Step
 
